@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧸 Donation Sharing Platform</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Donation Sharing Platform ✨</h1>
+            <p>A space for sharing items with warmth and soft colors.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div id="submission-message" class="success-message" style="display:none; text-align:center; padding: 15px; border-radius: 8px; background-color: #d4edda; color: #155724; margin-bottom: 20px;">
+            🎉 Thank you for your donation! Your item has been submitted and is now displayed in the list.
+        </div>
+        
+        <section class="filter-section">
+            <button class="filter-btn active" data-category="All">All Items</button>
+            <button class="filter-btn" data-category="Books">Books</button>
+            <button class="filter-btn" data-category="Appliances">Appliances</button>
+            <button class="filter-btn" data-category="Apparel">Apparel</button>
+        </section>
+
+        <section id="item-list" class="item-grid">
+        </section>
+
+        <hr>
+
+        <section class="donation-form-section">
+            <h2>📦 Donate an Item</h2>
+            <form action="<YOUR_FORMSPREE_ENDPOINT>" method="POST" class="donation-form" id="donation-form">
+                
+                <div class="form-group">
+                    <label for="item_name">Item Name *</label>
+                    <input type="text" id="item_name" name="Item Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Item Category *</label>
+                    <select id="category" name="Category" required>
+                        <option value="">Select a Category</option>
+                        <option value="Books">Books</option>
+                        <option value="Appliances">Appliances</option>
+                        <option value="Apparel">Apparel</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="description">Detailed Description and Condition *</label>
+                    <textarea id="description" name="Detailed Description" rows="4" required></textarea>
+                </div>
+                    
+                <div class="form-group">
+                    <label for="contact">Your Contact Info (Email/Line ID) *</label>
+                    <input type="text" id="contact" name="Contact Information" required>
+                    <small>This information will only be used for handover coordination and will not be publicly displayed.</small>
+                </div>
+                    
+                <button type="submit">Submit Donation Information</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Donation Sharing Platform | Information Sharing Platform</p>
+    </footer>
+
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-details-content">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
